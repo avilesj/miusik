@@ -10,7 +10,8 @@
   "author": "Jose Aviles",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "spotify-web-api-node": "^4.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
