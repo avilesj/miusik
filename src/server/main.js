@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const pages = require('./controllers/pageController');
 const spotify = require('./controllers/api/spotifyController');
-const port = process.env.PORT;
+const port = process.env.PORT || 8000;
 
 /**
  * View config

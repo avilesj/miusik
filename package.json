@@ -4,10 +4,10 @@
   "description": "Music analysis application",
   "main": "main.js",
   "scripts": {
-    "start": "webpack --env=production && node src/server/main.js",
+    "start": "node src/server/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --env=development --watch",
-    "build": "webpack --env=production"
+    "dev": "webpack --mode=development --watch",
+    "build": "webpack --mode=production"
   },
   "author": "Jose Aviles",
   "license": "ISC",
