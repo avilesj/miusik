@@ -10,7 +10,7 @@ const port = process.env.PORT;
  */
 app.use(express.static(path.join(__dirname, '..', 'client', 'views')));
 app.use('/favicon.ico', express.static(path.join(__dirname, '..','client', 'assets', 'favicon.ico')));
-
+app.use('/', express.static(path.join(__dirname, '..','client', 'dist')));
 /**
  * Routing
  */
