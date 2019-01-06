@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const pages = require('./controllers/pageController');
 const spotify = require('./controllers/api/spotifyController');
-
+const port = process.env.PORT;
 
 /**
  * View config
@@ -18,7 +18,7 @@ app.use('/favicon.ico', express.static(path.join(__dirname, '..','client', 'asse
 app.use('/', pages);
 app.use('/api', spotify);
 
-app.listen(8000, () => {
-  console.log('Miusik app listening on port 8000!')
+app.listen(port, () => {
+  console.log(`Miusik app listening on port ${port}!`);
 });
 
