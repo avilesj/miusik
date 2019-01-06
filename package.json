@@ -4,10 +4,11 @@
   "description": "Music analysis application",
   "main": "main.js",
   "scripts": {
-    "start": "webpack --mode=production && src/server/main.js",
+    "start": "node src/server/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode=development --watch",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "heroku-postbuild": "webpack --mode=production"
   },
   "author": "Jose Aviles",
   "license": "ISC",
