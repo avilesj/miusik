@@ -1,39 +1,81 @@
-const {spotifyApiInstance} = require('./spotifyAuthenticationService');
+const { spotifyApiInstance } = require('./spotifyAuthenticationService');
 
 class SpotifyService {
 
   constructor() {
-    
+
   }
 
-async searchArtist(name) {
-    
+  async searchTrack(name) {
+
     let result = "";
 
-    result = await spotifyApiInstance.searchArtists(name)
+    result = await spotifyApiInstance.searchTracks(name)
       .then(function (data) {
-        console.log('Search artists by ' + name);
-        return data;
-      }, function (err) {
+        console.log('Search tracks by ' + name);
+        
+        let content = {
+          body: data.body,
+          statusCode: data.statusCode
+        }
+
+        return content;
+      }).catch(function (err) {
+
         console.error(err);
+        return err;
+
       });
 
     return result;
   }
 
 
-  async getArtist(id) {
-    
+  async getTrack(id) {
+
     let result = "";
 
-    result = await spotifyApiInstance.getArtist(id)
+    result = await spotifyApiInstance.getTrack(id)
       .then(function (data) {
-        console.log('Getting artist with id: ' + id);
-        return data;
-      }, function (err) {
+        console.log('Getting track with id: ' + id);
+
+        let content = {
+          body: data.body,
+          statusCode: data.statusCode
+        }
+
+        return content;
+      }).catch(function (err) {
+
         console.error(err);
+        return err;
+
       });
 
+    return result;
+
+  }
+
+  async getTrackAudioFeatures(id) {
+
+    let result = "";
+
+    result = await spotifyApiInstance.getAudioFeaturesForTrack(id)
+      .then(function (data) {
+        console.log('Getting track features with id: ' + id);
+
+        let content = {
+          body: data.body,
+          statusCode: data.statusCode
+        }
+
+        return content;
+      }).catch(function (err) {
+
+        console.error(err);
+        return err;
+
+      });
     return result;
   }
 }

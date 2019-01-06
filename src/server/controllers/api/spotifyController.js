@@ -2,14 +2,20 @@ const express = require('express');
 const router = express.Router();
 const spotifyService = require('../../spotify/spotifyService');
 
-router.get('/search/artist/:name', async function (req, res) {
-  let data = await spotifyService.searchArtist(req.params.name);
+router.get('/search/track/:name', async function (req, res) {
+  let data = await spotifyService.searchTrack(req.params.name);
   console.log("Controller data: " + data);
   res.send(data);
 })
 
-router.get('/artist/:id', async function (req, res) {
-  let data = await spotifyService.getArtist(req.params.id);
+router.get('/track/:id', async function (req, res) {
+  let data = await spotifyService.getTrack(req.params.id);
+  console.log("Controller data: " + data);
+  res.send(data);
+})
+
+router.get('/track/:id/features', async function (req, res) {
+  let data = await spotifyService.getTrackAudioFeatures(req.params.id);
   console.log("Controller data: " + data);
   res.send(data);
 })
