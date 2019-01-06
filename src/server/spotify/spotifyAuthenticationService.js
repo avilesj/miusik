@@ -17,7 +17,7 @@ class SpotifyAuthenticationService {
 
         this.token = this.createToken().then((tokenData) => {
             console.log("interval created");
-            return setInterval(() => this.getToken(), (100 * (tokenData.body['expires_in'] + 500)));
+            return setInterval(() => this.getToken(), (1000 * (tokenData.body['expires_in'] + 500)));
         }).catch(console.log("couldn't create interval"));
 
     }
@@ -35,7 +35,7 @@ class SpotifyAuthenticationService {
         });
 
         this.spotify_auth.created = Date.now();
-        this.spotify_auth.expire = this.spotify_auth.created + (100 * credentials.body['expires_in']);
+        this.spotify_auth.expire = this.spotify_auth.created + (1000 * credentials.body['expires_in']);
         this.spotify_auth.key = credentials.body['access_token'];
 
         this.spotifyApiInstance.setAccessToken(credentials.body['access_token']);
