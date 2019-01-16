@@ -3,7 +3,7 @@ const path = require('path');
 const NodemonPlugin = require( 'nodemon-webpack-plugin' )
 
 module.exports = {
-  entry: './src/client/index.js',
+  entry: './src/client/index.jsx',
   output: {
     path: path.resolve(__dirname, 'src', 'client', 'dist'),
     filename: 'bundle.js',
@@ -15,7 +15,7 @@ module.exports = {
     new NodemonPlugin(
       {
         watch: path.resolve('./src/client'),
-        ext: 'js,njk,json',
+        ext: 'jsx,js,json',
         script: './src/server/main.js'
       }
     )
@@ -23,7 +23,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",

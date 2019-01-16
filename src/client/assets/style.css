@@ -1,0 +1,338 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #353839;
+}
+
+#background-image-container{
+    width:100%;
+    height:100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+#background-image{
+    height: inherit;
+}
+
+#index-page{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#page-not-found{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Logo!*/
+#logo-container {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 1em;
+    font-family: 'Marck Script', cursive;
+    color: #ff6f00;
+    text-shadow: 2px 1px #000000;
+}
+
+#logo-container h1 {
+    font-size: 4em;
+}
+
+/*Search*/
+
+#search-container {
+    width: 90%;
+    color: white;
+}
+
+
+#search-form-container form {
+    display: flex;
+    flex-direction: row;
+}
+
+#search-input {
+    width: 80%;
+    height: 20%;
+    font-size: 1.5em;
+    border-radius: 25px;
+    padding: 0.1em;
+    padding-left: 0.5em;
+    outline: none;
+    border: none;
+    box-shadow: 2px 5px #000000;
+}
+
+#search-button {
+    background-color: #ff6f00;
+    width: 20%;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 2px 5px #000000;
+    margin-left: 0.5em;
+}
+
+#search-button:active {
+    transform: translateY(4px);
+}
+
+#search-button i {
+    font-size: 2em;
+    color: white;
+}
+
+#search-label {
+    font-size: 1.5em;
+}
+
+/*Tracks, search results.*/
+
+#content-container {
+    width: 100%;
+}
+
+#track-container {
+    width: 90%;
+
+}
+
+.track {
+    margin-top: 1em;
+    border-radius: 5px;
+    box-shadow: 2px 5px #000000;
+    margin-bottom: 1em;
+}
+
+.track a {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.track:active {
+    transform: translateY(4px);
+}
+
+.track h1,
+.track h2,
+.track h3 {
+    font-family: 'Thasadith', sans-serif;
+    color: white;
+    font-size: 1.5em;
+
+    font-weight: 100;
+}
+
+.track h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.track h2 {
+    font-size: 1em;
+    text-align: center;
+}
+
+.track h3 {
+    font-size: 1em;
+    text-align: center;
+}
+
+.track-info {
+    margin: 0.5em;
+}
+
+.track-name {
+    width: 100%;
+}
+
+.track-album {
+    width: 100%;
+}
+
+.track-artists {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Misc*/
+.centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    background-color: #ff6f00;
+    font-family: 'Thasadith', sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto;
+    
+}
+
+#page-not-found-body {
+    font-family: 'Marck Script', cursive;
+    color: white;
+    text-shadow: 2px 1px #000000;
+    font-size: 2em;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*Track detail page*/
+
+
+#track-data {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.track-info-container {
+    padding: 1em;
+    width: 70%
+}
+
+.track-info-text {
+    font-family: 'Thasadith', sans-serif;
+    color: white;
+    font-size: 1em;
+    font-weight: 100;
+    text-shadow: 2px 1px #000000;
+    white-space: nowrap;
+}
+
+.title-duration {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: baseline;
+}
+
+.title-duration span {
+    margin-left: 1em;
+}
+
+.play-on-spotify-container {
+    width: 30%;
+    margin-right: 1em;;
+}
+
+.play-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff6f00;
+    border-radius: 15px;
+    padding: 0.5em;
+    color: white;
+    box-shadow: 2px 5px #000000;
+}
+
+.play-button-container:active {
+    transform: translateY(4px);
+}
+
+.play-button-container h1 {
+    font-family: 'Thasadith', sans-serif;
+    font-weight: 100;
+    font-size: 1em;
+    margin-right: 0.2em;
+    white-space: nowrap;
+
+}
+
+.play-button {
+    font-size: 2em;
+    margin-right: 0.2em;
+}
+
+/*features*/
+
+.track-features {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 20%;
+    overflow: scroll;
+    height: 65vh;
+}
+
+.feature {
+    color: white;
+    margin-top: 1em;
+}
+
+.feature-name-container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.feature-name{
+    font-size: 1.5em;
+}
+
+.feature p {
+    white-space: normal;
+    font-family: 'Thasadith', sans-serif;
+    font-weight: 100;
+    text-shadow: none;
+    text-rendering: optimizeLegibility;
+    margin: 1em;
+}
+
+.feature-help {
+    margin-top: 1em;
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 15px;
+    padding: 0.1em;
+}
+
+.feature-level-container {
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.feature-level-container i {
+    font-size: 2em;
+    margin-left: 0.4em;
+    margin-right: 0.1em;
+}
+
+.feature-level {
+    background-color: #ff6f00;
+    border-radius: 25px;
+    box-shadow: 2px 5px #000000;
+}

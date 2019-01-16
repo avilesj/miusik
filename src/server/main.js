@@ -9,6 +9,7 @@ const port = process.env.PORT || 8000;
  * View config
  */
 app.use(express.static(path.join(__dirname, '..', 'client', 'views')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'assets')));
 app.use('/favicon.ico', express.static(path.join(__dirname, '..','client', 'assets', 'favicon.ico')));
 app.use('/', express.static(path.join(__dirname, '..','client', 'dist')));
 /**
