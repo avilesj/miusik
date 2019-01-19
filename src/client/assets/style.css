@@ -51,8 +51,11 @@ body {
 /*Search*/
 
 #search-container {
-    width: 90%;
+    width: 100%;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 

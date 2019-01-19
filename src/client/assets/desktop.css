@@ -18,10 +18,14 @@
     /*Search*/
 
     #search-container {
-        width: 40%;
+        width: 50%;
         height: 100%;
         color: white;
         margin-top: 1em;
+    }
+    
+    #search-form-container{
+        width: 70%;
     }
 
     #search-button:hover {
@@ -31,7 +35,7 @@
     /*Tracks, search results.*/
 
     #content-container {
-        width: 50%;
+        width: 100%;
         height: 100%;
     }
 
