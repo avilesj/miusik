@@ -11,6 +11,9 @@
     "heroku-postbuild": "webpack --mode=production",
     "prod": "npm run build && npm start"
   },
+  "engines": {
+    "node": ">=10.15.0"
+  },
   "author": "Jose Aviles",
   "license": "ISC",
   "dependencies": {
