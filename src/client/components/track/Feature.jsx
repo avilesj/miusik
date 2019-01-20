@@ -43,7 +43,7 @@ class Feature extends Component {
                 </div>
                 <div className="feature-level-container">
                     <div className="feature-level centered-container" style={{width: this.state.barCurrentValue + "%" }}>
-                        <h2>{this.props.percentage}</h2>
+                        <h2>{this.props.percentage + "%"}</h2>
                     </div>
                     <i className="fas fa-chevron-circle-down" />
                 </div>
