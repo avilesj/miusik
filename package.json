@@ -12,11 +12,12 @@
     "prod": "npm run build && npm start"
   },
   "engines": {
-    "node": "10.15.0"
+    "node": ">=10.15.0"
   },
   "author": "Jose Aviles",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "express": "^4.16.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
