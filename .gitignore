@@ -1,3 +1,4 @@
 node_modules
 src/client/dist
 *.log
+package-lock.json
