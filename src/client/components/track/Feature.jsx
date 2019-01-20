@@ -4,6 +4,11 @@ class Feature extends Component {
     constructor(props) {
         super(props);
         this.toggleFetureHelp = this.toggleFetureHelp.bind(this);
+        this.state = {
+            isBarFilled: false,
+            barMaxValue: this.props.percentage,
+            barCurrentValue: 0
+        }
     }
 
     toggleFetureHelp(id) {
@@ -17,6 +22,17 @@ class Feature extends Component {
 
     }
 
+    componentDidMount(){
+        this.animation = setInterval( () => {this.setState({barCurrentValue: this.state.barCurrentValue+1})}, 10);
+    }
+
+    componentDidUpdate(){
+        if(this.state.barCurrentValue === this.state.barMaxValue)
+        {
+            clearInterval(this.animation);
+        }
+    }
+
     render() {
         return (
             <div
@@ -26,7 +42,7 @@ class Feature extends Component {
                     <h1 className="feature-name">{this.props.featureName}</h1>
                 </div>
                 <div className="feature-level-container">
-                    <div className="feature-level centered-container" style={{ width: " 0%" }}>
+                    <div className="feature-level centered-container" style={{width: this.state.barCurrentValue + "%" }}>
                         <h2>{this.props.percentage}</h2>
                     </div>
                     <i className="fas fa-chevron-circle-down" />
