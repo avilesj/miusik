@@ -18,7 +18,7 @@ class Search extends Component {
         let input = document.querySelector("#search-input").value;
         Axios.get("/api/search/track/" + input).then((response) => { 
             this.setState({
-                tracks: response.data.body.tracks.items
+                tracks: response.data.tracks.items
             });            
          }).catch( (err) => {console.log("Error: "+ err)});
     }

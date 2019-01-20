@@ -8,75 +8,36 @@ class SpotifyService {
 
   async searchTrack(name) {
 
-    let result = "";
-
-    result = await spotifyApiInstance.searchTracks(name)
-      .then(function (data) {
-        console.log('Search tracks by ' + name);
-        
-        let content = {
-          body: data.body,
-          statusCode: data.statusCode
-        }
-
-        return content;
-      }).catch(function (err) {
-
-        console.error(err);
-        return err;
-
-      });
-
-    return result;
+    const spotifyData = await spotifyApiInstance.searchTracks(name);
+    const content = {
+      body: spotifyData.body,
+      statusCode: spotifyData.statusCode
+    }
+ 
+    return content;
   }
 
 
-  async getTrack(id) {
+   async getTrack(id) { 
+   
+   const spotifyData = await spotifyApiInstance.getTrack(id);
+   const content = {
+     body: spotifyData.body,
+     statusCode: spotifyData.statusCode
+   };
 
-    let result = "";
-
-    result = await spotifyApiInstance.getTrack(id)
-      .then(function (data) {
-        console.log('Getting track with id: ' + id);
-
-        let content = {
-          body: data.body,
-          statusCode: data.statusCode
-        }
-
-        return content;
-      }).catch(function (err) {
-
-        console.error(err);
-        return err;
-
-      });
-
-    return result;
-
+   return content;
   }
 
   async getTrackAudioFeatures(id) {
 
-    let result = "";
-
-    result = await spotifyApiInstance.getAudioFeaturesForTrack(id)
-      .then(function (data) {
-        console.log('Getting track features with id: ' + id);
-
-        let content = {
-          body: data.body,
-          statusCode: data.statusCode
-        }
-
-        return content;
-      }).catch(function (err) {
-
-        console.error(err);
-        return err;
-
-      });
-    return result;
+    const spotifyData = await spotifyApiInstance.getAudioFeaturesForTrack(id);
+    const content = {
+      body: spotifyData.body,
+      statusCode: spotifyData.statusCode
+    };
+ 
+    return content;
   }
 }
 

@@ -12,16 +12,17 @@ class TrackDetailPage extends Component {
 
     this.state = {
       isLoading: true,
-      track: null,
-      trackFeatures: null,
+      track: {},
+      trackFeatures: {},
     }
   }
 
   componentDidMount(){
     Axios.get("/api/track/" + this.props.trackId).then( (data) => {
+      console.log("Found track data: ", JSON.stringify(data));
       this.setState({
-        isLoading: false,
-        track: data.body
+        track: data,
+        isLoading: false
       })
     })
   }
