@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import IndexPage from './components/index/IndexPage.jsx';
 import TrackDetailPage from './components/track/TrackDetailPage.jsx';
 import PageNotFound from './components/PageNotFound.jsx';
+import { hot } from 'react-hot-loader/root';
 
 class App extends Component {
     render() {
@@ -16,7 +17,7 @@ class App extends Component {
                 <Route component={PageNotFound} />
             </Switch>
         </BrowserRouter>
-        )
+        );
     }
 }
-export default App;
+export default hot(App);

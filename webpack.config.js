@@ -9,7 +9,17 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/'
   },
-  target: 'node',
+  target: 'web',
+  mode: 'development',
+  devServer: {
+    hot: true,
+    port:8080,
+    proxy: {
+      '**': {
+        target: 'http://localhost:8000/',
+      }
+    }
+  },
   plugins: [
 
     new NodemonPlugin(
@@ -18,16 +28,23 @@ module.exports = {
         ext: 'jsx,js,json',
         script: './src/server/main.js'
       }
-    )
+    ),
+
+    new webpack.HotModuleReplacementPlugin()
   ],
   module: {
     rules: [
       {
         test: /\.jsx$/,
         exclude: /node_modules/,
-        use: {
+        use: [
+          {
           loader: "babel-loader",
-        }
+          },
+          {
+          loader: 'react-hot-loader/webpack',
+          }
+      ]
       }
     ]
 }
