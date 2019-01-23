@@ -1,5 +1,13 @@
 import React from 'react';
 
+const convertToMinutes = (miliseconds) => {
+
+    const seconds = miliseconds / 1000;
+    const minutes = Math.floor(seconds / 60);
+    const trackSeconds = Math.floor(seconds - (minutes * 60));
+    return(`${minutes}:${trackSeconds}`);
+};
+
 const TrackMainInfo = (props) => {
 
     const track = {
@@ -14,7 +22,7 @@ const TrackMainInfo = (props) => {
     <div className="track-info-container track-info-text">
         <div className="title-duration">
             <h1>{track.name}</h1>
-            <span>{track.duration}</span>
+            <span>Duration: {convertToMinutes(track.duration)}</span>
         </div>
         <h2>{track.artists.map( (e, index) => (index+1) === track.artists.length? e.name : e.name + ", ")}</h2>
         <h3>{track.album}</h3>

@@ -10,9 +10,9 @@ const TrackFeatures = (props) => {
     featureConstants.map((featureName) => {
         featureList[featureName] = Math.floor(props.features.data[featureName] * 100);
     })
-    
-    for(let featureName in featureList){
-        featureComponents.push(<Feature key={featureName} featureName = {featureName} percentage={featureList[featureName]}/>);
+
+    for (let featureName in featureList) {
+        featureComponents.push(<Feature key={featureName} featureName={featureName} percentage={featureList[featureName]} />);
     }
     return (<div className="track-features">
         {featureComponents};
