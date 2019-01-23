@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import featureDescription from '../../Constants';
 
 class Feature extends Component {
     constructor(props) {
@@ -49,10 +50,7 @@ class Feature extends Component {
                 </div>
                 <div id={this.props.featureName + "-info"} className="feature-help" hidden>
                     <p>
-                        Danceability describes how suitable a track is for dancing based
-                        on a combination of musical elements including tempo, rhythm
-                        stability, beat strength, and overall regularity. A value of 0
-                        is least danceable and 100 is most danceable.
+                        {featureDescription[this.props.featureName]}
             </p>
                 </div>
             </div>
