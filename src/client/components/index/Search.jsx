@@ -1,26 +1,43 @@
 import React, { Component } from 'react';
 import Content from './Content.jsx';
 import Axios from 'axios';
+import Loading from '../Loading.jsx';
 
 class Search extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            tracks: []
+            tracks: [],
+            dataFound: false,
+            searchPerformed: false,
+            isSearching: false,
         }
 
     }
 
     searchTrack(e) {
         e.preventDefault();
+        this.setState({
+            isSearching: true,
+        })
         console.log("Getting your track");
         let input = document.querySelector("#search-input").value;
         Axios.get("/api/search/track/" + input).then((response) => { 
             this.setState({
-                tracks: response.data.tracks.items
+                tracks: response.data.tracks.items,
+                dataFound: response.data.tracks.items.length > 1? true : false,
+                searchPerformed: true,
+                isSearching: false,
             });            
-         }).catch( (err) => {console.log("Error: "+ err)});
+         }).catch( (err) => {
+             console.log("Error: "+ err);
+             this.setState({
+                 dataFound: false,
+                 searchPerformed: true,
+                 isSearching: false,
+             })
+            });
     }
 
     render() {
@@ -32,7 +49,7 @@ class Search extends Component {
                         <button id="search-button" type="submit"><i className="fas fa-search"></i></button>
                     </form>
                 </div>
-                <Content tracks={this.state.tracks} />
+                {this.state.isSearching? <Loading/> : <Content tracks={this.state.tracks} dataFound={this.state.dataFound} searchPerformed={this.state.searchPerformed} />}
             </div>
         )
     }
