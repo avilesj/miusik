@@ -7,7 +7,7 @@ class Feature extends Component {
         this.state = {
             isBarFilled: false,
             barMaxValue: this.props.percentage,
-            barCurrentValue: 0
+            barCurrentValue: this.props.percentage < 10? 10 : 0
         }
     }
 
@@ -27,7 +27,7 @@ class Feature extends Component {
     }
 
     componentDidUpdate(){
-        if(this.state.barCurrentValue === this.state.barMaxValue)
+        if(this.state.barCurrentValue >= this.state.barMaxValue)
         {
             clearInterval(this.animation);
         }
