@@ -15,7 +15,7 @@ const TrackFeatures = (props) => {
         featureComponents.push(<Feature key={featureName} featureName={featureName} percentage={featureList[featureName]} />);
     }
     return (<div className="track-features">
-        {featureComponents};
+        {featureComponents}
     </div>);
 }
 
