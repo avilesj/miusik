@@ -1,12 +1,12 @@
-import React from "react";
-import Logo from "../Logo.jsx";
-import TrackDetail from "./TrackDetail.jsx";
+import React from 'react';
+import Logo from '../Logo.jsx';
+import TrackDetail from './TrackDetail.jsx';
 
-let TrackDetailContainer = (props) => {
+const TrackDetailContainer = (props) => {
   return (
     <div id="track-page">
-        <Logo/>
-        <TrackDetail track={props.track}/>
+      <Logo/>
+      <TrackDetail track={props.track}/>
     </div>
   );
 };

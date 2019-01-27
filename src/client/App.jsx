@@ -6,18 +6,18 @@ import PageNotFound from './components/PageNotFound.jsx';
 import { hot } from 'react-hot-loader/root';
 
 class App extends Component {
-    render() {
-        return(
-        <BrowserRouter>
-            <Switch>
-                <Route path="/" exact component={IndexPage} />
-                <Route path="/track/:trackId" exact render={(props) => {
-                    return <TrackDetailPage trackId={props.match.params.trackId} />;
-                }} />
-                <Route component={PageNotFound} />
-            </Switch>
-        </BrowserRouter>
-        );
-    }
+  render() {
+    return(
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component={IndexPage} />
+          <Route path="/track/:trackId" exact render={(props) => {
+            return <TrackDetailPage trackId={props.match.params.trackId} />;
+          }} />
+          <Route component={PageNotFound} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 export default hot(App);

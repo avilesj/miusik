@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import BackgroundImageContainer from "./BackgroundImageContainer.jsx";
-import TrackDetailContainer from "./TrackDetailContainer.jsx";
-import Footer from "../Footer.jsx";
-import Loading from "../Loading.jsx";
+import React, { Component } from 'react';
+import BackgroundImageContainer from './BackgroundImageContainer.jsx';
+import TrackDetailContainer from './TrackDetailContainer.jsx';
+import Footer from '../Footer.jsx';
+import Loading from '../Loading.jsx';
 import Axios from 'axios';
 
 class TrackDetailPage extends Component {
@@ -14,22 +14,21 @@ class TrackDetailPage extends Component {
       isLoading: true,
       track: {},
       trackFeatures: {},
-    }
+    };
   }
 
   componentDidMount(){
-    Axios.get("/api/track/" + this.props.trackId).then( (data) => {
-      console.log("Found track data: ", JSON.stringify(data));
+    Axios.get('/api/track/' + this.props.trackId).then( (data) => {
       this.setState({
         track: data,
         isLoading: false
-      })
-    })
+      });
+    });
   }
   render() {
 
     if(this.state.isLoading){
-      return <Loading/>
+      return <Loading/>;
     }
     return (
       <div>
@@ -39,6 +38,6 @@ class TrackDetailPage extends Component {
       </div>
     );
   }
-};
+}
 
 export default TrackDetailPage;

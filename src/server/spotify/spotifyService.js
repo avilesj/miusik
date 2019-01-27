@@ -2,31 +2,27 @@ const { spotifyApiInstance } = require('./spotifyAuthenticationService');
 
 class SpotifyService {
 
-  constructor() {
-
-  }
-
   async searchTrack(name) {
 
     const spotifyData = await spotifyApiInstance.searchTracks(name);
     const content = {
       body: spotifyData.body,
       statusCode: spotifyData.statusCode
-    }
+    };
  
     return content;
   }
 
 
-   async getTrack(id) { 
+  async getTrack(id) { 
    
-   const spotifyData = await spotifyApiInstance.getTrack(id);
-   const content = {
-     body: spotifyData.body,
-     statusCode: spotifyData.statusCode
-   };
+    const spotifyData = await spotifyApiInstance.getTrack(id);
+    const content = {     
+      body: spotifyData.body,
+      statusCode: spotifyData.statusCode
+    };
 
-   return content;
+    return content;
   }
 
   async getTrackAudioFeatures(id) {
