@@ -41,4 +41,4 @@ npm run prod
 
 For development workflow, the app uses ```nodemon``` and ```react-hot-loader``` with ```webpack-dev-server``` for client side development.
 
-Feel free tu submit a pull request!
+Feel free to submit a pull request!
